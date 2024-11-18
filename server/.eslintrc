@@ -1,0 +1,17 @@
+{
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 2023
+  },
+  "plugins": ["jest"],
+  "env": {
+    "jest/globals": true
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [["#", "./src"]]
+      }
+    }
+  }
+}

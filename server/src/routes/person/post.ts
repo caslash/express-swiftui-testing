@@ -14,6 +14,8 @@ const handler = async (req: Request, res: Response, next: NextFunction) => {
       name,
       age,
     });
+
+    console.log("[INFO]", `Created ${result.dataValues.name}`)
     
     res.status(201).json({ id: result.dataValues.id });
   } catch (err) {

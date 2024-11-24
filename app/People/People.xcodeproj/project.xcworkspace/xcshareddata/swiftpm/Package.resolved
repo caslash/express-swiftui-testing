@@ -1,0 +1,24 @@
+{
+  "originHash" : "d85597915a65c5e59ffd0ecc6ec0eb72d07d1fc8815fb867d66a0ff7ff931116",
+  "pins" : [
+    {
+      "identity" : "alerttoast",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/elai950/AlertToast",
+      "state" : {
+        "branch" : "master",
+        "revision" : "76a1c1793cd3443001c20c6033beb84453b25d9f"
+      }
+    },
+    {
+      "identity" : "factory",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hmlongco/Factory",
+      "state" : {
+        "branch" : "swift6",
+        "revision" : "179d4f6ce0775e701d401b5f79e517f9ccf0be52"
+      }
+    }
+  ],
+  "version" : 3
+}

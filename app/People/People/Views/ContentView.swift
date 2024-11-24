@@ -56,6 +56,7 @@ struct ContentView: View {
                     Label("Add", systemImage: "plus")
                 }
             }
+            .navigationTitle("People")
         }
         .sheet(isPresented: self.$isPresentingAddSheet) {
             NavigationStack {

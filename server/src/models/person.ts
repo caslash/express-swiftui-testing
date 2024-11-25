@@ -7,9 +7,10 @@ interface PersonAttributes {
   age: number;
 }
 
-interface PersonCreationAttributes extends Optional<PersonAttributes, 'id'> {}
-
-class Person extends Model<PersonAttributes, PersonCreationAttributes> implements PersonAttributes {
+class Person
+  extends Model<PersonAttributes, Optional<PersonAttributes, 'id'>>
+  implements PersonAttributes
+{
   public id!: string;
   public name!: string;
   public age!: number;

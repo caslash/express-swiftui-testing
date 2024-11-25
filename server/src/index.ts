@@ -16,15 +16,17 @@ const routesPath = resolve(__dirname, './routes');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-routeGenerator.loadRoutes(app, routesPath)
-  .then(_ => {
+routeGenerator
+  .loadRoutes(app, routesPath)
+  .then(() => {
     console.log('[INFO]', 'All routes loaded successfully');
   })
-  .catch(err => {
+  .catch((err) => {
     console.error('Error loading routes:', err);
   });
 
-sequelize.sync()
+sequelize
+  .sync()
   .then(() => {
     console.log('[INFO]', 'Database connected');
     app.listen(port, () => {

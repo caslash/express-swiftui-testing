@@ -6,7 +6,7 @@ const handler = async (req: Request, res: Response, next: NextFunction) => {
     const { name, age } = req.body;
 
     if (!name || !age) {
-      res.status(400).end()
+      res.status(400).end();
       return;
     }
 
@@ -15,8 +15,8 @@ const handler = async (req: Request, res: Response, next: NextFunction) => {
       age,
     });
 
-    console.log("[INFO]", `Created ${result.dataValues.name}`)
-    
+    console.log('[INFO]', `Created ${result.dataValues.name}`);
+
     res.status(201).json({ id: result.dataValues.id });
   } catch (err) {
     next(err);

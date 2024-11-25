@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx tsc && node ./dist/index.js",
-    "lint": "jest --config=jest.lint.config.js",
+    "lint": "jest --config=jest.lint.config.ts",
     "prestart": "npm run build",
     "build": "tsc"
   },

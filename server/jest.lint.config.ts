@@ -4,4 +4,4 @@ const config = {
   testMatch: ['<rootDir>/src/**/*.ts'],
 };
 
-module.exports = config;
+export default config;

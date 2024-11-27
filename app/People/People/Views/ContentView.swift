@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var viewModel: ContentViewModel = .init()
     
     @State private var isPresentingAddSheet: Bool = false
+    @State private var isPresentingSettingsSheet: Bool = false
     
     @State private var showToast: Bool = false
     @State private var toastTitle: String?
@@ -51,6 +52,12 @@ struct ContentView: View {
             }
             .toolbar {
                 Button {
+                    self.isPresentingSettingsSheet.toggle()
+                } label: {
+                    Label("Settings", systemImage: "gear")
+                }
+                
+                Button {
                     self.isPresentingAddSheet.toggle()
                 } label: {
                     Label("Add", systemImage: "plus")
@@ -58,6 +65,7 @@ struct ContentView: View {
             }
             .navigationTitle("People")
         }
+        .sheet(isPresented: self.$isPresentingSettingsSheet, content: { SettingsView() })
         .sheet(isPresented: self.$isPresentingAddSheet) {
             NavigationStack {
                 AddEditPersonView { success in

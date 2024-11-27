@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Factory
 import Foundation
 import Observation
 
@@ -23,7 +24,8 @@ public protocol IDataService {
 
 @Observable
 public class DataService: IDataService {
-    
+    @ObservationIgnored @Injected(\.authService) private var authService: any IAuthService
+
     public var people: [Person] = []
     
     private let baseURL: URL = .init(string: "http://localhost:3000")!
@@ -42,6 +44,7 @@ public class DataService: IDataService {
         var request = URLRequest(url: baseURL.appendingPathComponent(path))
         request.httpMethod = method
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(self.authService.jwt ?? "")", forHTTPHeaderField: "Authorization")
         if let body { request.httpBody = try? JSONEncoder().encode(body) }
         return request
     }

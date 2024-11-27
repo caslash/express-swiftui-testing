@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E8C92D22CF6DD0600CE47EB /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 2E8C92D12CF6DD0600CE47EB /* Auth0 */; };
 		2EAD18332CF1857100F5B929 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 2EAD18322CF1857100F5B929 /* Factory */; };
 		2EAD18362CF1879500F5B929 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 2EAD18352CF1879500F5B929 /* AlertToast */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E8C92D22CF6DD0600CE47EB /* Auth0 in Frameworks */,
 				2EAD18332CF1857100F5B929 /* Factory in Frameworks */,
 				2EAD18362CF1879500F5B929 /* AlertToast in Frameworks */,
 			);
@@ -74,6 +76,7 @@
 			packageProductDependencies = (
 				2EAD18322CF1857100F5B929 /* Factory */,
 				2EAD18352CF1879500F5B929 /* AlertToast */,
+				2E8C92D12CF6DD0600CE47EB /* Auth0 */,
 			);
 			productName = People;
 			productReference = 2EAD180B2CF183B600F5B929 /* People.app */;
@@ -106,6 +109,7 @@
 			packageReferences = (
 				2EAD18312CF1857100F5B929 /* XCRemoteSwiftPackageReference "Factory" */,
 				2EAD18342CF1879500F5B929 /* XCRemoteSwiftPackageReference "AlertToast" */,
+				2E8C92D02CF6DD0600CE47EB /* XCRemoteSwiftPackageReference "Auth0" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2EAD180C2CF183B600F5B929 /* Products */;
@@ -262,6 +266,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = People/People.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"People/Preview Content\"";
@@ -291,6 +296,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = People/People.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"People/Preview Content\"";
@@ -339,6 +345,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2E8C92D02CF6DD0600CE47EB /* XCRemoteSwiftPackageReference "Auth0" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/Auth0.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.10.0;
+			};
+		};
 		2EAD18312CF1857100F5B929 /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Factory";
@@ -358,6 +372,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2E8C92D12CF6DD0600CE47EB /* Auth0 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E8C92D02CF6DD0600CE47EB /* XCRemoteSwiftPackageReference "Auth0" */;
+			productName = Auth0;
+		};
 		2EAD18322CF1857100F5B929 /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2EAD18312CF1857100F5B929 /* XCRemoteSwiftPackageReference "Factory" */;

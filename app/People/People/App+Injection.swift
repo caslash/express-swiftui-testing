@@ -13,4 +13,8 @@ extension Container {
         Factory(self) { DataService() }
             .singleton
     }
+    var authService: Factory<any IAuthService> {
+        Factory(self) { AuthService() }
+            .singleton
+    }
 }

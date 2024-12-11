@@ -6,6 +6,16 @@
 */.env.*
 */dist/
 
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+.versel
+.vscode
+
 # MacOS
 .DS_Store
 

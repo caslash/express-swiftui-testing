@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import Person from '@/db/models/person';
+import Person from '@/src/db/models/person';
 import { validate, version } from 'uuid';
 import { NextResponse } from 'next/server';
 

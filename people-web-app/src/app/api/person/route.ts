@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import Person from '@/db/models/person';
-
-export const dynamic = 'force-dynamic';
+import Person from '@/src/db/models/person';
 
 export async function POST(req: NextRequest) {
   try {

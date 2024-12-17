@@ -1,10 +1,9 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import sequelize from './config/database';
+import sequelize from '@/db/config/database';
 import bodyParser from 'body-parser';
 import { resolve } from 'path';
-import { RouteGenerator } from './routeGenerator';
-import { auth } from 'express-oauth2-jwt-bearer';
+import { RouteGenerator } from '@/routeGenerator';
 
 dotenv.config();
 
@@ -14,15 +13,8 @@ const port = process.env.PORT ?? 3000;
 
 const routesPath = resolve(__dirname, './routes');
 
-const jwtCheck = auth({
-  audience: process.env.AUTH0_AUDIENCE,
-  issuerBaseURL: process.env.AUTH0_DOMAIN,
-  tokenSigningAlg: 'RS256',
-});
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(jwtCheck);
 
 routeGenerator
   .loadRoutes(app, routesPath)

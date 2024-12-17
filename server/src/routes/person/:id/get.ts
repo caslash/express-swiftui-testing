@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import Person from '../../../models/person';
+import Person from '@/db/models/person';
 import { validate, version } from 'uuid';
 
 const handler = async (req: Request, res: Response, next: NextFunction) => {

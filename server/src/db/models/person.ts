@@ -1,5 +1,5 @@
 import { Model, DataTypes, Optional } from 'sequelize';
-import sequelize from '@/db/config/database';
+import sequelize from '../config/database';
 
 interface PersonAttributes {
   id: string;

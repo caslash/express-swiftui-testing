@@ -28,11 +28,12 @@ routeGenerator
 app.listen(port, () => {
   console.log('[INFO]', `Server is listening at http://localhost:${port}`);
 });
-// sequelize
-//   .sync()
-//   .then(() => {
-//     console.log('[INFO]', 'Database connected');
-//   })
-//   .catch((err) => {
-//     console.error('Unable to connect to database:', err);
-//   });
+
+sequelize
+  .sync()
+  .then(() => {
+    console.log('[INFO]', 'Database connected');
+  })
+  .catch((err) => {
+    console.error('Unable to connect to database:', err);
+  });

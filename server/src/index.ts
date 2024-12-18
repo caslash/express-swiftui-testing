@@ -25,12 +25,14 @@ routeGenerator
     console.error('Error loading routes:', err);
   });
 
-sequelize
-  .sync()
-  .then(() => {
-    console.log('[INFO]', 'Database connected');
-    app.listen(port, () => {
-      console.log('[INFO]', `Server is listening at http://localhost:${port}`);
-    });
-  })
-  .catch((err) => console.error('Unable to connect to database:', err));
+app.listen(port, () => {
+  console.log('[INFO]', `Server is listening at http://localhost:${port}`);
+});
+// sequelize
+//   .sync()
+//   .then(() => {
+//     console.log('[INFO]', 'Database connected');
+//   })
+//   .catch((err) => {
+//     console.error('Unable to connect to database:', err);
+//   });

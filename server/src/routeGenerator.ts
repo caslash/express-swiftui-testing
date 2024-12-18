@@ -21,8 +21,8 @@ class RouteGenerator {
           const routePath = baseRoute.endsWith('/') ? baseRoute.slice(0, -1) : baseRoute;
 
           // @ts-expect-error: app[method] will actually work here
-          app[method](routePath, routeHandler.default);
-          console.log('[INFO]', `Registered route: [${method.toUpperCase()}] ${routePath}`);
+          app[method](`/api${routePath}`, routeHandler.default);
+          console.log('[INFO]', `Registered route: [${method.toUpperCase()}] /api${routePath}`);
         } else {
           console.warn('[ERROR]', `Unsupported method in file: ${entry.name}`);
         }

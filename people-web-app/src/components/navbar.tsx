@@ -1,13 +1,14 @@
-import { Navbar as NextUINavbar, NavbarContent, NavbarItem } from '@nextui-org/navbar';
+import { Navbar, NavbarContent, NavbarItem } from '@nextui-org/react';
 import { link as linkStyles } from '@nextui-org/theme';
 import NextLink from 'next/link';
 import clsx from 'clsx';
 
 import { siteConfig } from '@/config/site';
+import { ThemeSwitcher } from '@/components/themeswitcher';
 
-export const Navbar = () => {
+export const PeopleNavbar = () => {
   return (
-    <NextUINavbar maxWidth="xl" position="sticky">
+    <Navbar maxWidth="xl" position="static" isBordered>
       <NavbarContent className="basis-1/5 sm:basis-full" justify="center">
         <ul className="hidden lg:flex gap-4 justify-center ml-2">
           {siteConfig.navItems.map((item) => (
@@ -26,6 +27,9 @@ export const Navbar = () => {
           ))}
         </ul>
       </NavbarContent>
-    </NextUINavbar>
+      <NavbarContent justify="end">
+        <ThemeSwitcher />
+      </NavbarContent>
+    </Navbar>
   );
 };

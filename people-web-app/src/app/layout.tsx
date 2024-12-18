@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import { Providers } from '@/app/providers';
 
 import { siteConfig } from '@/config/site';
-import { Navbar } from '@/components/navbar';
+import { PeopleNavbar } from '@/components/navbar';
 
 export const metadata: Metadata = {
   title: {
@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="dark">
       <body>
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
-          <Navbar />
+          <PeopleNavbar />
           <main>{children}</main>
         </Providers>
       </body>

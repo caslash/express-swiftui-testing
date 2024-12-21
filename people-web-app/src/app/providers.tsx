@@ -3,8 +3,9 @@
 import type { ThemeProviderProps } from 'next-themes';
 
 import * as React from 'react';
-import { NextUIProvider } from '@nextui-org/system';
 import { useRouter } from 'next/navigation';
+import { NextUIProvider } from '@nextui-org/system';
+
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 
 export interface ProvidersProps {
@@ -20,8 +21,10 @@ declare module '@react-types/shared' {
 
 export function Providers({ children, themeProps }: ProvidersProps) {
   const router = useRouter();
+  const useHref = (href: string) => process.env.BASE_PATH + href;
+
   return (
-    <NextUIProvider navigate={router.push}>
+    <NextUIProvider navigate={router.push} useHref={useHref}>
       <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
     </NextUIProvider>
   );

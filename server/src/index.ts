@@ -9,7 +9,7 @@ dotenv.config();
 
 const app = express();
 const routeGenerator = new RouteGenerator();
-const port = process.env.PORT ?? 3000;
+const port = process.env.PORT ?? 3001;
 
 const routesPath = resolve(__dirname, './routes');
 

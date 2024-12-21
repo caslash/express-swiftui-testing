@@ -10,7 +10,7 @@ services:
         DOCKER_COMPOSE_VERSION: 1.25.4
 
     environment:
-      PORT: 3000
+      PORT: 3001
       POSTGRES_HOST: db
       DB_PORT: 5432
       DB_TYPE: postgres
@@ -38,7 +38,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: people
     ports:
-      - "4321:5432"
+      - '4321:5432'
 
   pgadmin:
     image: dpage/pgadmin4
